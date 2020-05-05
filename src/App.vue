@@ -1,13 +1,19 @@
 <template>
     <div id="app">
+        <shortcut />
         <transition :name="transitionName">
             <router-view class="child-view"/>
         </transition>
     </div>
 </template>
 <script>
+    import shortcut from '@/components/Shortcut'
+
     export default {
         name: 'App',
+        components: {
+            shortcut
+        },
         data() {
             return {
                 transitionName: 'slide-left'

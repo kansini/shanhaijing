@@ -10,6 +10,8 @@
 </template>
 
 <script>
+
+
     export default {
         name: 'Home',
         components: {},
@@ -19,10 +21,11 @@
                     {"img": "god"},
                     {"img": "fish"},
                     {"img": "bird"},
-                    {"img": "beast"}
+                    {"img": "beast"},
+                    //  {"img": "country"}
                 ]
             }
-        },
+        }
     }
 </script>
 <style lang="scss" scoped>
@@ -31,7 +34,7 @@
         width: 100vw;
         height: 100vh;
         background: $base-bg;
-        padding: 80px 96px;
+        padding: 64px 40px;
         box-sizing: border-box;
 
         .logo {
@@ -52,19 +55,26 @@
 
             .nav-item {
                 cursor: pointer;
-                transition: all ease .4s;
+                width: 20%;
                 animation: scaleIn linear .6s forwards;
                 transform: scale(0);
 
+                img {
+                    transition: all ease .4s;
+                }
+
 
                 &:hover {
-                  filter: contrast(200%);
+
+                    img {
+                        transform: scale(1.1);
+                    }
                 }
             }
 
-            @for $n from 1 through 5 {
+            @for $n from 1 through 6 {
                 .nav-item:nth-child(#{$n}) {
-                    animation-delay: $n * 0.2s
+                    animation-delay: $n * .5s
                 }
             }
 
@@ -72,7 +82,6 @@
 
         @keyframes scaleIn {
             0% {
-
                 transform: scale(0);
             }
             100% {
