@@ -2,11 +2,11 @@
     <div class="detail-item">
         <div class="detail-content">
             <div class="figure">
-                <img :src="`./img/figure${index + 1}.svg`">
+                <img :src="`./assets/img/figure${index + 1}.svg`">
             </div>
             <tb-title :title="detail.title"/>
             <tb-poem :poem="detail && detail.poem && detail.poem.predict"></tb-poem>
-            <tb-poem title="颂曰" :poem="detail && detail.poem && detail.poem.description"></tb-poem>
+<!--            <tb-poem title="颂曰" :poem="detail && detail.poem && detail.poem.description"></tb-poem>-->
         </div>
     </div>
 

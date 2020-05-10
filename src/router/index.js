@@ -14,11 +14,11 @@ const routes = [
         name: 'Home',
         component: Home
     },
-    // {
-    //     path: '/detail',
-    //     name: 'detail',
-    //     component: () => import('@/views/Detail')
-    // }
+    {
+        path: '/detail',
+        name: 'detail',
+        component: () => import('@/views/Detail')
+    }
 ]
 
 const router = new VueRouter({

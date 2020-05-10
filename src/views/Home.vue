@@ -2,9 +2,14 @@
     <div class="home">
         <div class="logo"></div>
         <div class="nav">
-            <div class="nav-item" v-for="item in navs">
-                <img :src="`../assets/img/nav-${item.img}.svg`" alt="">
-            </div>
+            <router-link :to="item.path" tag="div" class="nav-item" v-for="item in navs" :key="item.img">
+                <div class="nav-item-img" :style="{background:item.bg}">
+                    <img :src="`../assets/img/nav-${item.img}.svg`">
+                </div>
+                <div class="nav-item-title">
+                    <img :src="`../assets/img/title-${item.img}.svg`">
+                </div>
+            </router-link>
         </div>
     </div>
 </template>
@@ -18,11 +23,27 @@
         data() {
             return {
                 navs: [
-                    {"img": "god"},
-                    {"img": "fish"},
-                    {"img": "bird"},
-                    {"img": "beast"},
-                    //  {"img": "country"}
+                    {
+                        "img": "shen",
+                        "path": "detail",
+                        "bg": "#F7D6A2"
+                    },
+                    {
+                        "img": "fish",
+                        "path": "detail",
+                        "bg": "#259A6C"
+                    },
+                    {
+                        "img": "bird",
+                        "path": "detail",
+                        "bg": "#5B7CC3"
+                    },
+                    {
+                        "img": "beast",
+                        "path": "detail",
+                        "bg": "#845F4A"
+                    },
+                    //{"img": "country"}
                 ]
             }
         }
@@ -54,22 +75,32 @@
 
 
             .nav-item {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
                 cursor: pointer;
-                width: 20%;
                 animation: scaleIn linear .6s forwards;
                 transform: scale(0);
 
-                img {
+                .nav-item-img {
+                    width: 240px;
+                    height: 240px;
+                    border-radius: 240px;
+                    overflow: hidden;
                     transition: all ease .4s;
-                }
-
-
-                &:hover {
+                    margin-bottom: 16px;
 
                     img {
+                        width: 100%;
+                    }
+
+                    &:hover {
                         transform: scale(1.1);
                     }
                 }
+
+
             }
 
             @for $n from 1 through 6 {

@@ -19,7 +19,7 @@
         props: {
             title: {
                 type: String,
-                default: '谶曰'
+                default: '大荒东经'
             },
             poem: {
                 type: Array,

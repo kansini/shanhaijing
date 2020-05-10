@@ -1,7 +1,9 @@
 <template>
     <div class="shortcut">
-        <a href="https://github.com/kansini/shanhaijing" target="_blank" class="btn-github"></a>
+        <div class="btn-cover" @click="$router.push('/')" v-if="$route.path != '/'"></div>
         <div class="btn-fullscreen" :class="{isFullscreen:isFullscreen}" @click="toggleFullscreen"></div>
+        <a href="https://github.com/kansini/shanhaijing" target="_blank" class="btn-github"></a>
+        <div class="btn-nav" v-if="$route.path != '/'" @click="handleToNav"></div>
     </div>
 
 </template>
@@ -20,6 +22,9 @@
             toggleFullscreen() {
                 screenfull.toggle()
                 this.isFullscreen = !this.isFullscreen
+            },
+            handleToNav() {
+                this.$emit('openNav')
             }
         }
     }
@@ -67,6 +72,16 @@
 
         .isFullscreen {
             background: url("../assets/img/ico-exitFullscreen.svg") no-repeat center;
+            background-size: auto 100%;
+        }
+
+        .btn-cover {
+            background: url("../assets/img/ico-context.svg") no-repeat center;
+            background-size: auto 100%;
+        }
+
+        .btn-nav {
+            background: url("../assets/img/ico-nav.svg") no-repeat center;
             background-size: auto 100%;
         }
 

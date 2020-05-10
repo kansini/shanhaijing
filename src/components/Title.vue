@@ -1,12 +1,8 @@
 <template>
     <div class="title">
         <div class="title-item">
-            <div>第{{title.sn}}象</div>
+            <div>{{title.sn}}</div>
             <div>{{title.ganzhi}}</div>
-        </div>
-        <div class="title-item">
-            <div>{{title.hexagrams1}}</div>
-            <div>{{title.hexagrams2}}</div>
         </div>
     </div>
 </template>
